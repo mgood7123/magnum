@@ -619,7 +619,7 @@ void Context::setupDriverWorkarounds() {
 Context::Configuration& Context::Configuration::addDisabledWorkarounds(Containers::ArrayView<const Containers::StringView> workarounds) {
     arrayReserve(_disabledWorkarounds, _disabledWorkarounds.size() + workarounds.size());
 
-    for(const Containers::StringView workaround: workarounds) {
+    for(const Containers::StringView & workaround: workarounds) {
         /* Find the workaround. Note that we'll add the found view to the array
            and not the passed view, as the found view is guaranteed to stay in
            scope */
